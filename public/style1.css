@@ -1,4 +1,59 @@
+nav {
+    background-image: url(https://preview.redd.it/xa40ixptjv761.jpg?width=1080&crop=smart&auto=webp&s=bb53671210fa083b4e1a77ad1b56c6c58d667e82);
+    background-repeat: repeat;
+    background-size: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    justify-content: center;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-family: Tahoma, Verdana, "sans-serif";
+}
+nav a:hover {
+    color: #4CAF50;
+    text-shadow: 0 0 10px #4CAF50;
+}
 header {
-    background-image: url(https://img.redbull.com/images/c_crop,w_2640,h_1320,x_190,y_0/c_auto,w_1200,h_630/f_auto,q_auto/redbullcom/2025/8/11/dcusojkfgapu4zxe3gtb/minecraft-landscape);
-    
+     background-color: rgba(216, 255, 186, 0.7);
+     border-radius: 15px;
+     padding-bottom: 10px
+     margin-bottom: 10px;
+     text-align: center;
+        }
+body {
+    background-image: url(https://images3.alphacoders.com/132/thumb-1920-1321959.png);
+    background-attachment: fixed;
+    font-family: Tahoma, Verdana, "sans-serif";
+    font-size: 20px;
+    line-height: 1.6;
+}
+footer {
+    background-color:  rgba(216, 255, 186, 0.7);
+    border-radius: 15px;
+    padding: 30px 30px;
+    text-align: left;
+}
+footer h2 {
+    color: #4CAF50
+    margin-bottom: 25px;
+    text-align: center;
+}
+footer ul{
+    margin-left: 25px;
+    padding: 0;
+}
+}
+footer a:link{
+    color: #3e33d6;
+}
+footer a:visited{
+    color: #3e33d6;
+}
+footer a:hover {
+    text-decoration:underline;
 }

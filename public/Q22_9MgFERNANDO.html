@@ -13,6 +13,78 @@
     <link rel = "icon" href = "../assets/mineLOGO.png" type ="image/png">
     <script src="script.js" defer></script>
 
+    <style>
+.dm-section {
+     background-color: rgba(255, 255, 255, 0.8);
+     border-radius: 15px;
+     padding: 25px 35px;
+     margin: 30px auto;
+     width: 90%;
+     overflow: hidden;
+        }
+.dm-article {
+    display: block;
+}
+.dm-text {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.dm-text img {
+  width: 50%;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+}
+.float-right img{
+    float: right;
+    margin-left: 20px;
+}
+.float-left img{
+    float: left;
+    margin-right: 20px;
+}
+.dm-text h2 {
+    color: #216124;
+    margin: 10px;
+}
+.dm-text h3{
+    color:#115014;
+    margin: 10px
+}
+.dm-aside {
+    text-align: center;
+    margin-top: 20px;
+}
+.dm-aside img, iframe {
+    width: 100%;
+    border-radius: 16px;
+}
+#dm-fsection{
+    background-color: rgba(215,255,255,0.8);
+    border: 2px solid #4CAF50;
+    border-radius: 20px;
+    padding: 25px 40px;
+    margin: 30px auto;
+    text-align: center;
+    font-family: Tahoma, Verdana, "sans-serif";
+}
+#tablesec{
+    background-color:rgba(215,255,255,0.8);
+     border: 2px solid #4CAF50;
+    border-radius: 20px;
+    padding: 25px 35px;
+    margin: 30px auto;
+    text-align: center;
+    font-family: Tahoma, Verdana, "sans-serif";
+}
+#tablesec tr:hover {
+  background-color: rgba(200, 255, 200, 0.6);
+}
+    </style>
+
 </head>
 
 <body> 
@@ -24,23 +96,26 @@
 
 <!--Navigation Bar-->
     <nav>
-        <a href="../index.html"> HOME |</a></li>
-        <!--Links of Groupmate Links-->
-        <a href = "https://rosefjeynald.github.io/2QRepositoryMg18/public/2Q1GMgLOMOTAN.html"> MOBS |</a> </li>
-        <a href = "https://s3an-cool.github.io/2QRepositoryMg03/public/2Q19MagnesiumBuenavista.html"> ITEMS | </a> 
-        <a href = "https://nathanraphaelcarreon22.github.io/2QRepositoryMg05/public/2Q1GMagnesiumCarreon.html"> TOOLS & WEAPONS </a> </li>
+        <a href="../index.html"> HOME </a>
+        <a href = "https://rosefjeynald.github.io/2QRepositoryMg18/public/2Q1GMgLOMOTAN.html"> MOBS </a> 
+        <a href = "https://s3an-cool.github.io/2QRepositoryMg03/public/2Q19MagnesiumBuenavista.html"> ITEMS </a>
+        <a href = "https://nathanraphaelcarreon22.github.io/2QRepositoryMg05/public/2Q1GMagnesiumCarreon.html"> TOOLS & WEAPONS </a> 
     </nav>
     </header>
-    <section> 
 
+    <section id="dm-fsection">
         <h2> Background to the 3 Dimensions:  </h2>
             <p> Minecraft has two pocket dimensions completely separate from your peaceful spawn place, the Overworld: 
-                there is a land filled boiling lava known as the Nether, and galactic islands floating over a dark void called the End. </p>
-                
-    <!--Overworld Segment-->                
+                there is a land filled boiling lava known as the Nether, and galactic islands floating over a dark void called the End. </p>       
+    </section>
 
-            <article> 
+    <!--Overworld Segment-->                
+        <section class="dm-section">
+            <article class="dm-article">
+                <div class="dm-text float-right">
                 <h2> The Overworld </h2> 
+                    <img src= "../assets/Overworld.png" alt = "Picture of the Overworld" type="image/png" title="The Overworld" width="500px" height ="500px">
+                    <img src= "../assets/Overworld_Mansion.png" alt = "Picture of the Mansion" type="image/png" title="Mansion" width="500px" height ="500px">
                     <h3> Biomes </h3>
                         <p> The Overworld contains a diverse number of biomes such as Taiga Forests, Ice Spikes, Dark Oak Forests,
                         Deserts and Jungles. </p>
@@ -68,24 +143,23 @@
                                         being able to shoot lasers from its eyes. </p>
                                 </li>
                             </ol> 
-
-                <!--Aside 1-->
-                    <aside>
-                        <h2> OVERWORLD </h2>
-                            <img src= "../assets/Overworld.png" alt = "Picture of the Overworld" type="image/png" title="The Overworld" width="500px" height ="500px">
-                            <br>
-                            <img src= "../assets/Overworld_Mansion.png" alt = "Picture of the Mansion" type="image/png" title="Mansion" width="500px" height ="500px">
-                            <br>
+                        </div>
+                    <aside class = "dm-aside">
+                        <h2> OVERWORLD VIDEO </h2>
                             <iframe width="560px" height="315px" src="https://www.youtube.com/embed/-j9x-_XoqmI?si=sULSFM8iNNd4I7qq" title="YouTube video player" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe>
                             <br>
                     </aside>
             </article>
-
+        </section>
     <!--Nether Segment-->
-            <article> 
+        <section class="dm-section">
+            <article class="dm-article">
+                <div class="dm-text float-left">
                 <h2> The Nether </h2> 
+                     <img src= "../assets/Nether.png" alt = "Picture of the Nether" type="image/png" title="The Nether" width="500px" height ="500px">
+                     <img src= "../assets/Nether_Bastion.png" alt = "Picture of the Bastion" type="image/png" title="Bastion" width="500px" height ="500px">
                     <h3> Background on The Nether </h3>
                         <p> The Nether can be accessed by building a nether portal in the overworld, creating a 4 block wide, 5 block tall 
                             outline of Obsidian and lighting it with a fire source, whether a fire charge, burning wood, or flint and steel. </p>
@@ -110,14 +184,9 @@
                                         will gain a Nether Star and a Wither Rose.</p>
                             </li>
                         </ul>
-
-                <!--Aside 2-->
-                    <aside>
-                        <h2> NETHER </h2>
-                            <img src= "../assets/Nether.png" alt = "Picture of the Nether" type="image/png" title="The Nether" width="500px" height ="500px">
-                            <br>
-                            <img src= "../assets/Nether_Bastion.png" alt = "Picture of the Bastion" type="image/png" title="Bastion" width="500px" height ="500px">
-                            <br>
+                    </div>
+                    <aside class = "dm-aside">
+                        <h2> NETHER VIDEO </h2>
                             <iframe width="560px" height="315px" src="https://www.youtube.com/embed/1DhWXAiNgfQ?si=O_tPhQdfPLejOlF9" title="YouTube video player" 
                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -125,10 +194,14 @@
                     </aside>
 
             </article>
-
+        </section>
     <!--End Segment-->
-            <article> 
+        <section class="dm-section">
+            <article  class="dm-article">
+                <div class="dm-text float-right">
                 <h2> The End </h2>
+                <img src= "../assets/End.png" alt = "Picture of the End" type="image/png" title="The End" width="500px" height ="500px">
+                <img src= "../assets/End_Structure.png" alt = "Picture of the End City" type="image/png" title="End City" width="500px" height ="500px">
                     <h3> Background on The End </h3>
                         <p> The End Portal is accessed through the End Portal located in the Stronghold- underground dungeons with a room 
                             containing a 5x5 block portal- where you can place Eyes of Ender (a combination of Ender Pearls and Blaze Powder) 
@@ -153,25 +226,20 @@
                                         that sits on the Bedrock fountain, waiting to be collected by the player. </p>
                             </li>
                         </ul>
-
-                <!--Aside 3-->
-                    <aside>
-                    <h2> End PICTURES </h2>
-                        <img src= "../assets/End.png" alt = "Picture of the End" type="image/png" title="The End" width="500px" height ="500px">
-                        <br> 
-                        <img src= "../assets/End_Structure.png" alt = "Picture of the End City" type="image/png" title="End City" width="500px" height ="500px">
-                        <br>
+                    </div>
+                    <aside class = "dm-aside">
+                    <h2> END VIDEO </h2>
                         <iframe width="560px" height="315px" src="https://www.youtube.com/embed/DK2sEppaKDY?si=kuI8rh1ysP_W1NBZ" title="YouTube video player" 
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <br>
                     </aside>
-
             </article>
-        
-        <p> To summarize all the information, below is a table of some structures, biomes, ores and bosses each dimension has: </p>
+        </section>
 
 <!-- TABLE -->
+    <section id="tablesec">
+        <p> To summarize all the information, below is a table of some structures, biomes, ores and bosses each dimension has: </p>
         <table border = "3">
             <tr>     
                 <th> </th>
@@ -209,14 +277,14 @@
                     blocks are affected by gravity such as Gravel and Sand which can be found in the Nether and Overworld, while most other blocks float. The overworld
                     is affected by a day/night cycle, while the Nether and End aren't since they are completely seperate pocket dimensions without a sun and moon. There
                     are many other factors that make each dimension similar and unique, and that's what makes it special: it <i> builds </i> on the resources, mobs and structures each player can find
-                    creating a perfec sandbox game!</td>
+                    creating a perfect sandbox game! </td>
             </tr>
         </table>
     </section>
 
 <!--Footer-->
     <footer>
-        <h2> Credit to these assets: </h2>
+        <h2> Credit to these assets: </h2> <hr>
             <ul>
                 <li> <b> Images From: </b></li>
                     <li> Minecraft Wiki. (n.d.). <i>Minecraft Wiki.</i> Fandom. <a href="https://minecraft.fandom.com/wiki/Minecraft_Wiki"> 
@@ -228,9 +296,7 @@
                     <li> NameHero. (2025). <i>Exploring the Woodland Mansion Minecraft: The ultimate guide.</i> <a href="https://www.namehero.com/gaming-blog/exploring-the-woodland-mansion-minecraft-the-ultimate-guide/"> 
                         https://www.namehero.com/gaming-blog/exploring-the-woodland-mansion-minecraft-the-ultimate-guide/ </a></li>
                     <li> Reddit. (2023, April 15). <i>The Nether looks great without the fog [Post]. </i> Reddit. <a href="https://www.reddit.com/r/Minecraft/comments/130f082/the_nether_looks_great_without_the_fog/"> 
-                        https://www.reddit.com/r/Minecraft/comments/130f082/the_nether_looks_great_without_the_fog/ </a></li>
-                    <li> SRC Network. (2025, April). <i> Jack Black’s Steve looking worried in front of the Nether portal in a Minecraft movie </i> [Image]. <a href="https://static1.srcdn.com/wordpress/wp-content/uploads/2025/04/jack-black-s-steve-looking-worried-in-front-of-the-nether-portal-in-a-minecraft-movie.jpg"> 
-                        https://static1.srcdn.com/wordpress/wp-content/uploads/2025/04/jack-black-s-steve-looking-worried-in-front-of-the-nether-portal-in-a-minecraft-movie.jpg </a></li>
+                        https://www.reddit.com/r/Minecraft/comments/130f082/the_nether_looks_great_without_the_fog/ </a></li> <hr>
                 <li> <b> Videos From: </b></li>
                     <li> Pixlriffs. (2025, April 2). <i>How to beat the Ender Dragon</i> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=DK2sEppaKDY"> 
                         https://www.youtube.com/watch?v=DK2sEppaKDY </a></li>
@@ -241,9 +307,5 @@
                 <li> <b>All Game Content From &copy; Mojang Studios</b></li>
             </ul>
     </footer>
-
-
-    <img src= "../assets/jackblackthenether.png" alt = "Jack Black" type="image/png" title="Jack Black" width="1000px" height ="767px">
-
 </body>
 </html>
