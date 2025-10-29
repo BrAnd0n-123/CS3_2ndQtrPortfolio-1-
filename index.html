@@ -14,31 +14,52 @@
 
     <style>
         body {
-            background-color: black;
+            background: black;
             color: white;
             font-family: Tahoma, Verdana, "Comic Sans MS";
             font-weight: bold;
             margin: 25px;
+        }
+        header {
+            border-bottom: 3px solid white;
+            padding-bottom: 15px;
+        }
+        header p {
+            font-style: italic;
+            color: white;
+        }
+        header > div > p{
+            font-style: normal;
         }
         ul {
             list-style-type: none;
             margin: 30px;
             padding: 0;
             border: 4px solid white;
+            border-radius: 20px;
             width: 400px;
             background-color: rgb(48, 57, 225);
         }
+        li a{
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            tansition: all 0.3 ease;
+        }
         li a:link{
             display: block;
-            color: black;
+            color: white;
             padding: 15px;
             text-decoration: none;
         }
         li a:visited{
-            color: black;
+            color: white;
         }
         li a:hover {
             background-color: rgb(37, 32, 183);
+            border-radius: 15px;
+            transform: scale(1.05);
             color: white;
         }
         li a:active {
