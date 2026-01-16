@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> //df
+<html> 
     <head> 
         <title>DESIGNING AN HTML FORM</title>
         <style> 
@@ -22,7 +22,7 @@
                 padding: 1rem;
                 margin-bottom: 1rem;
                 border-radius: 7px;
-                border: 2px solid #072b55;
+                border: 2px solid #072b55; 
             }
             legend{
                 font-weight: bold;
@@ -33,12 +33,13 @@
 
     <body>
             <h1>Application Form</h1>
-            <form method="post" action="submit">
+            <form method="post" action="submit" onsubmit="return willSubmit()" onreset="return willReset()">
 
                 <fieldset form="studentBasicInfo">
                     <legend>Student Basic Information</legend>
                         <label for="StudentID">StudentID: </label>
-                        <input type="number" id ="studentID" name="studentID" min="1" max="10000" required>
+                        <input type="number" id ="studentID" name="studentID" min="1" max="10000" required
+                        onfocus="highlight(this)" onblur="checkInput(this)" >
                         <br><br>
                         <label for="FullName">Full Name: </label>
                         <input type="text" id="fullName" name="fullName" required>
@@ -57,7 +58,7 @@
                         <input type="text" id ="mobilePhone" name="mobilePhone" required>
                         <br><br>
                         <label for="Grade">Grade Level: </label>
-                        <select name="gradeLevel" id="grade"  required>
+                        <select name="gradeLevel" id="grade"  required onchange="gradedChange(this)">
                             <option value="Kinder"> Kinder</option>
                             <option value="Grade 1"> Grade 1</option>
                             <option value="Grade 2"> Grade 2</option>
@@ -102,8 +103,8 @@
                         <textarea id="tArea" name="WhyJoinUs" rows="6" cols="67"  required> </textarea>
                         <br><br>
 
-                        <input type="submit" value="Submit Application" onclick="willSubmit()">
-                        <input type="reset" value="Reset Response" onclick="willReset()">
+                        <input type="submit" value="Submit Application" >
+                        <input type="reset" value="Reset Response" >
 
                 </fieldset>
 
@@ -117,6 +118,20 @@
 
             function willReset(){
                 return confirm("Are you sure you want to reset your answers?");
+            }
+
+            function highlight(element){
+                element.style.background = "4a6deb";
+                element.style.color = "white";
+            }
+
+            function checkInput(element){
+                element.style.background = "";
+                element.style.color="";
+            }
+
+            function gradedChange(element){
+                alert("You selected: " + element.value + "!");
             }
 
         </script>
