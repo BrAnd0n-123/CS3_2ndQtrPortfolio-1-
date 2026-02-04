@@ -33,7 +33,7 @@
 
     <body>
             <h1>Application Form</h1>
-            <form method="post" action="submit" onsubmit="return willSubmit()" onreset="return willReset()">
+            <form method="post" onsubmit="return saveSignup(event)" onreset="return willReset()">
 
                 <fieldset form="studentBasicInfo">
                     <legend>Student Basic Information</legend>
@@ -51,7 +51,6 @@
                         <input type="email" id="email" name="email" required>
                         <br><br>
                 </fieldset>
-
                 <fieldset form="studentSchoolInfo">
                     <legend>Student School Information</legend>
                         <label for="Number">Mobile Phone: </label>
@@ -102,18 +101,51 @@
                         <label for="joinin">Why Join Us? : </label>
                         <textarea id="tArea" name="WhyJoinUs" rows="6" cols="67"  required> </textarea>
                         <br><br>
+                    </fieldset>
+                    <fieldset form="actionButtons">
 
-                        <input type="submit" value="Submit Application" >
-                        <input type="reset" value="Reset Response" >
-
-                </fieldset>
+                        <legend> Action Buttons </legend>
+                            <input type="submit" value="Submit Application" >
+                            <input type="reset" value="Reset Response" >
+                            <button type="button" onclick="viewSignups()"> View Signups </button>
+                    </fieldset>
 
             </form>
 
         <script>
 
-            function willSubmit(){
-                return confirm("Are you sure about your answers?");
+            function saveSignup(event){
+                event.preventDefault();
+
+                if(!confirm("Are you sure you want to submit the application?")){
+                    return false;
+                }
+                let signup={
+                    studentID: document.getElementById("studentID").value,
+                    fullName: document.getElementById("fullName").value,
+                    birthday: document.getElementById("birthday").value,
+                    email: document.getElementById("email").value,
+                    mobilePhone: document.getElementById("mobilePhone").value,
+                    grade: document.getElementById("grade").value,
+                    intEx: document.querySelector('input[name="intEx"]:checked').value,
+                    clubs: document.getElementById("clubs").value,
+                    whyJoinUs: document.getElementById("tArea").value
+                }
+
+                let signups=localStorage.getItem("signups");
+                if(signups){
+                    signups = JSON.parse(signups);
+                }
+                else{
+                    signups=[];
+                }
+
+                signups.push(signup);
+                localStorage.setItem("signups", JSON.stringify(signups));
+                alert("Signup saved!");
+                alert("Thank you " + signup.fullName + " for submitting your application!");
+
+                return false;
             }
 
             function willReset(){
@@ -121,7 +153,7 @@
             }
 
             function highlight(element){
-                element.style.background = "4a6deb";
+                element.style.background = "#4a6deb";
                 element.style.color = "white";
             }
 
@@ -132,6 +164,10 @@
 
             function gradedChange(element){
                 alert("You selected: " + element.value + "!");
+            }
+
+            function viewSignups(){
+                window.location.href = "viewSignups.html";
             }
 
         </script>

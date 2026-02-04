@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> Show list of students who signed up </h1>
+        <h2> by Bt Fernando </h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Full Name</th>
+                    <th>Birthday</th>
+                    <th>Email Address</th>
+                    <th>Mobile Phone</th>
+                    <th>Grade Level</th>
+                    <th>Preferred Subjects</th>
+                </tr>
+            </thead>
+            <tbody id="signupTableBody">
+            </tbody>
+        </table>
+
+        <script>
+
+            const KEY="signups";
+            function loadSignups(){
+                const raw=localStorage.getItem(KEY);
+                if(raw){
+                    return JSON.parse(raw);
+                } else {
+                    return [];
+                }
+
+                function saveSignups(entries){
+                    localStorage.setItem(KEY, JSON.stringify(entries));
+                }
+
+                function renderTable(){
+                    const signups=loadSignups();
+                    const selectedClub = document.getElementById("clubFilter").value;
+
+                    let filtered = [];
+                    
+                    if(selectedClub === "All"){
+                        filtered = signups;
+                    } else {
+                        filtered = signups.filter(function(item){
+                            return item.clubs === selectedClub;
+                        });
+                }
+
+                const list=document.getElementById("list");
+            }
+        }
+            let signups = JSON.parse(localStorage.getItem("signups"));
+
+            function displayTableData(data){
+                let tbody
+            }
+        </script>
+    </body>
+</html>
