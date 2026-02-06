@@ -16,7 +16,7 @@
                 background-color: #d1bdeb;
                 padding: 1rem;
                 border-radius: 6px;
-                box-shadow: 10px black;
+                box-shadow: 0 0 10px black;
             }
             fieldset{
                 padding: 1rem;
@@ -99,7 +99,7 @@
                         </select>
                         <br><br>
                         <label for="joinin">Why Join Us? : </label>
-                        <textarea id="tArea" name="WhyJoinUs" rows="6" cols="67"  required> </textarea>
+                        <textarea id="tArea" name="WhyJoinUs" rows="6" cols="67"  required></textarea>
                         <br><br>
                     </fieldset>
                     <fieldset form="actionButtons">
@@ -114,38 +114,40 @@
 
         <script>
 
-            function saveSignup(event){
-                event.preventDefault();
+            function saveSignup(event){ // run form
+                event.preventDefault();//prevent default page refresh behaviour when the user submits
 
-                if(!confirm("Are you sure you want to submit the application?")){
+                if(!confirm("Are you sure you want to submit the application?")){ //simple ask to confirm question before saving data
                     return false;
                 }
-                let signup={
+                let signup={//create object to store all data input values
                     studentID: document.getElementById("studentID").value,
                     fullName: document.getElementById("fullName").value,
                     birthday: document.getElementById("birthday").value,
                     email: document.getElementById("email").value,
                     mobilePhone: document.getElementById("mobilePhone").value,
-                    grade: document.getElementById("grade").value,
-                    intEx: document.querySelector('input[name="intEx"]:checked').value,
-                    clubs: document.getElementById("clubs").value,
-                    whyJoinUs: document.getElementById("tArea").value
+                    gradeLevel: document.getElementById("grade").value,
+                    internExtern: document.querySelector('input[name="intEx"]:checked').value,
+                    club: document.getElementById("clubs").value,
+                    whyJoin: document.getElementById("tArea").value
                 }
 
-                let signups=localStorage.getItem("signups");
-                if(signups){
+                let signups=localStorage.getItem("signups");//read existing data from localStorage
+                if(signups){//if there is existing data, convert JSON string back into an array
                     signups = JSON.parse(signups);
                 }
-                else{
+                else{//if there is no data, create an empty array
                     signups=[];
                 }
 
-                signups.push(signup);
-                localStorage.setItem("signups", JSON.stringify(signups));
-                alert("Signup saved!");
+                signups.push(signup);//add new signup object into the array
+
+                localStorage.setItem("signups", JSON.stringify(signups));//save updated array into localStorage as a string using stringify
+
+                alert("Signup saved!"); //confirmation message
                 alert("Thank you " + signup.fullName + " for submitting your application!");
 
-                return false;
+                return false; //prevent page reload
             }
 
             function willReset(){

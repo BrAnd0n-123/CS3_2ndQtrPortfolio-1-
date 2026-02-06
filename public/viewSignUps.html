@@ -1,62 +1,131 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Show Signups</title>
+        <style>
+            body{
+                font-family: Karla, sans-serif;
+                background-color: #aceff1;
+                padding: 1rem;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th{
+                background-color: #d1bdeb;
+            }
+
+            th, td{
+                padding: 8px;
+                border: 1px solid black;
+            }
+            tr:hover{
+                background-color:#d1bdeb;
+            }
+
+        </style>
     <body>
         <h1> Show list of students who signed up </h1>
         <h2> by Bt Fernando </h2>
 
+        <h2> Club Signups </h2>
+
+        <button onclick="goBack()">Back to home</button>
+        <button onclick="goBackSignups()">Back to Signups</button>
+
+        <select onchange="showClub(this.value)">
+            <option value = "All">ALL</option>
+            <option value="Loqui"> Loqui</option>
+            <option value="ATOM"> ATOM</option>
+            <option value="Math Club"> Math Club</option>
+            <option value="Astrosoc"> Astrosoc</option>
+            <option value="AKSIS"> AKSIS</option>
+            <option value="Sapienara"> Sapienara</option>
+            <option value="Likha"> Likha</option>
+            <option value="Himig Agham"> Himig Agham</option>
+            <option value="Alianti"> Alianti</option>
+            <option value="Tomorrow"> Tomorrow</option>
+            <option value="Karyo Biomedical Society"> Karyo Biomedical Society</option> 
+            <option value="Volant"> Volant</option>
+            <option value="Kislap"> Kislap</option>
+            <option value="CARE"> CARE</option>
+        </select>
+
+        <h3> Total Signups: <span id="tSignUps"></span></h3>
+
         <table border="1">
-            <thead>
-                <tr>
-                    <th>Student ID</th>
-                    <th>Full Name</th>
-                    <th>Birthday</th>
-                    <th>Email Address</th>
-                    <th>Mobile Phone</th>
-                    <th>Grade Level</th>
-                    <th>Preferred Subjects</th>
-                </tr>
-            </thead>
-            <tbody id="signupTableBody">
-            </tbody>
+            <tbody id="results"></tbody>
         </table>
 
         <script>
 
-            const KEY="signups";
-            function loadSignups(){
-                const raw=localStorage.getItem(KEY);
-                if(raw){
-                    return JSON.parse(raw);
-                } else {
-                    return [];
+            function showClub(chosenClub){ //New function to display signups based on the selected club (or all clubs if All is selected)
+
+                let totalSignUp = 0; //Simple counter
+                let rowString = ""; //String to store table rows before displaying
+
+                let signupString = localStorage.getItem("signups"); //Retrieve data from localStorage
+
+                if(!signupString){ 
+                    document.getElementById("results").innerHTML = "No Account Found";
+                    document.getElementById("tSignUps").innerHTML = "";
+                    return; //If there is no saved sata, the if statement displays a message stating no accounts exist, and stops the function from excecuting with return
                 }
 
-                function saveSignups(entries){
-                    localStorage.setItem(KEY, JSON.stringify(entries));
-                }
+                let signupsList = JSON.parse(signupString); //Convert stored JSON to a JS object 
+                document.getElementById("results").innerHTML=""; //Clear the previous table results before displaying new filtered results
 
-                function renderTable(){
-                    const signups=loadSignups();
-                    const selectedClub = document.getElementById("clubFilter").value;
+                for(let key in signupsList){ //loop through each signup stored in localStorage
 
-                    let filtered = [];
+                    let signup=signupsList[key]; //store the current signup entry
+
+                    if(signup.club === chosenClub || chosenClub === "All"){
+                        //table row for signup data
+                        rowString += "<tr>";
+                        rowString += "<td>" + signup.club + "</td>";
+                        rowString += "<td>" + signup.studentID + "</td>";
+                        rowString += "<td>" + signup.fullName + "</td>";
+                        rowString += "<td>" + signup.gradeLevel + "</td>";
+                        rowString += "<td>" + signup.email + "</td>";
+                        rowString += "<td>" + signup.mobilePhone + "</td>";
+                        rowString += "<td>" + signup.internExtern + "</td>";
+                        rowString += "</tr>";
+                        totalSignUp++; //increase nubmer in signup counter
+                    }
                     
-                    if(selectedClub === "All"){
-                        filtered = signups;
-                    } else {
-                        filtered = signups.filter(function(item){
-                            return item.clubs === selectedClub;
-                        });
                 }
+                //if matching signups were found
+                if(rowString){
 
-                const list=document.getElementById("list");
-            }
-        }
-            let signups = JSON.parse(localStorage.getItem("signups"));
+                //add table header before displaying 
+                rowString= "<tr><th>Club</th><th>Student ID</th><th>Full Name</th><th>Grade Level</th><th>Email</th><th>Mobile Phone</th><th>Intern/Extern</th></tr>" + rowString;
 
-            function displayTableData(data){
-                let tbody
+                //display table
+                document.getElementById("results").innerHTML= rowString;
+                //display total number of signups
+                document.getElementById("tSignUps").innerHTML = totalSignUp;
+                } else {
+                    //if no signups, display message
+                    document.getElementById("results").innerHTML = "No Signups Found";
+                    document.getElementById("tSignUps").innerHTML = ""; 
+                }
             }
-        </script>
-    </body>
-</html>
+
+            //run code, while also automatically run "All" option
+            showClub("All");
+
+            
+
+            function goBack(){
+                window.location.href="../index.html";
+            }
+
+            function goBackSignups(){
+                window.location.href="Q3_2G9MgFERNANDO.html";
+            }
+                    
+                    </script>
+                    </body>
+                    </html>
