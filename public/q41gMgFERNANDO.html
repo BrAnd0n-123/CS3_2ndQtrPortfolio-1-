@@ -1,15 +1,29 @@
 <!DOCTYPE html>
+<head>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #but{
+            padding: 0 0 20px 20px;
+            margin: 10px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
 <html>
     <body>
 
         <h1> Add a Movie </h1>
 
-        <form>
+        <form method="post" onsubmit="addMovie()">
+
             <label for="movieTitle"> Title: </label>
-            <input type="text" id="movieTitle" name="title">
+            <input type="text" id="movieTitle" name="title"> <br> <br>
 
             <label for="movieYear"> Year: </label>
-            <input type="text" id="movieYear" name="year">
+            <input type="text" id="movieYear" name="year"> <br> <br>
 
             <label for="genre"> Genre: </label>
             <select name="genre" id="genre">
@@ -18,7 +32,7 @@
                 <option value="action">Action</option>
                 <option value="adventure">Adventure</option>
                 <option value="romance">Romance</option>
-            </select>
+            </select> <br> <br>
 
             <p> Rating </p>
 
@@ -29,8 +43,38 @@
             <input type="radio" id="star2" name="star2" value="2"> <label for="star2"></label>
             <input type="radio" id="star1" name="star1" value="1"> <label for="star1"></label>
 
+            <br> <br>
+
+            <button type="submit" id="but">Add Movie</button>
             
         </form>
+
+        <script> 
+
+            function addMovie(event){
+                event.preventDefault(){
+
+                }
+
+                const title = document.getElementById('movieTitle');
+                const year = document.getElementById('movieYear');
+                const genre = document.getElementById('genre');
+
+                const titleVal = title.value;
+                const yearVal = year.value;
+                const genreVal = genre.value;
+
+                const savedMovie = {
+                    title: titleVal,
+                    year: yearVal,
+                    genre: genreVal
+                };
+
+                localStorage.setItem('data', JSON.stringify(data))
+
+            }
+            
+        </script>
 
     </body>
 </html>
