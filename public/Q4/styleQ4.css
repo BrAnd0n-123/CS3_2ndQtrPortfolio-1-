@@ -1,0 +1,31 @@
+        html{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #but{
+            padding: 0 0 20px 20px;
+            margin: 10px;
+            border-radius: 3px;
+        }
+        .starRating{
+  display:flex;
+  flex-direction:row-reverse;
+  font-size:30px;
+}
+
+.starRating input{
+  display:none;
+}
+
+.starRating label{
+  cursor:pointer;
+  color:gray;
+}
+
+.starRating input:checked ~ label{
+  color:gold;
+}
+
+.starRating label:hover,
+.starRating label:hover ~ label{
+  color:gold;
+}

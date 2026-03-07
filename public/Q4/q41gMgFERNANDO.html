@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styleQ4.css">
+    <script src="scriptQ4.js" defer></script>
+</head>
+<html>
+    <body>
+
+        <h1> Add a Movie </h1>
+
+        <form id="formMovie">
+
+            <label for="movieTitle"> Title: </label>
+            <input type="text" id="movieTitle" name="title"> <br> <br>
+
+            <label for="movieYear"> Year: </label>
+            <input type="text" id="movieYear" name="year"> <br> <br>
+
+            <label for="genre"> Genre: </label>
+            <select name="genre" id="genre">
+                <option value="horror">Horror</option>
+                <option value="animation">Animation</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="romance">Romance</option>
+            </select> <br> <br>
+
+            <p> Rating </p>
+
+            <div class="starRating">
+                <input type="radio" name="movieStars" value="5" id="star5">
+                <label for="star5">★</label>
+
+                <input type="radio" name="movieStars" value="4" id="star4">
+                <label for="star4">★</label>
+
+                <input type="radio" name="movieStars" value="3" id="star3">
+                <label for="star3">★</label>
+
+                <input type="radio" name="movieStars" value="2" id="star2">
+                <label for="star2">★</label>
+
+                <input type="radio" name="movieStars" value="1" id="star1">
+                <label for="star1">★</label>
+            </div>
+
+            <br> <br>
+
+            <button type="submit" id="but">Add Movie</button>
+
+            <h2>Saved Movies</h2>
+            <div id="movieList"></div>
+            
+        </form>
+
+    </body>
+</html>
