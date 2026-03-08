@@ -6,15 +6,19 @@
 <html>
     <body>
 
-        <h1> Add a Movie </h1>
+        <div id="billboard1"> 
+            <h1 class="scrolling-text"> ADD A MOVIE • ADD A MOVIE • ADD A MOVIE • ADD A MOVIE • ADD A MOVIE</h1> 
+        </div>
+
+        <div id = "tennaBox">
 
         <form id="formMovie">
 
             <label for="movieTitle"> Title: </label>
-            <input type="text" id="movieTitle" name="title"> <br> <br>
+            <input type="text" id="movieTitle" name="title" required> <br> <br>
 
             <label for="movieYear"> Year: </label>
-            <input type="text" id="movieYear" name="year"> <br> <br>
+            <input type="text" id="movieYear" name="year" required> <br> <br>
 
             <label for="genre"> Genre: </label>
             <select name="genre" id="genre">
@@ -48,10 +52,17 @@
 
             <button type="submit" id="but">Add Movie</button>
 
+        </form>
+
+
             <h2>Saved Movies</h2>
             <div id="movieList"></div>
             
-        </form>
+        </div>
+
+        <div id="billboard2"> 
+            <h1 class="scrolling-text"> ADD A MOVIE • ADD A MOVIE • ADD A MOVIE • ADD A MOVIE • ADD A MOVIE</h1> 
+        </div>
 
     </body>
 </html>
