@@ -14,24 +14,34 @@
 
         <form id="formMovie">
 
-            <label for="movieTitle"> Title: </label>
-            <input type="text" id="movieTitle" name="title" required> <br> <br>
+            <div id=tvTimeHead>
+                <h2 id="tvTime"> RATE A MOVIE! </h2>
+            </div>
 
-            <label for="movieYear"> Year: </label>
-            <input type="text" id="movieYear" name="year" required> <br> <br>
+            <div id="idTitle">
+                <label for="movieTitle"> Title: </label>
+                <input type="text" id="movieTitle" name="title" required> <br> <br>
+            </div>
 
-            <label for="genre"> Genre: </label>
-            <select name="genre" id="genre">
-                <option value="horror">Horror</option>
-                <option value="animation">Animation</option>
-                <option value="action">Action</option>
-                <option value="adventure">Adventure</option>
-                <option value="romance">Romance</option>
-            </select> <br> <br>
+            <div id="idYear">
+                <label for="movieYear"> Year: </label>
+                <input type="text" id="movieYear" name="year" required> <br> <br>
+            </div>
 
-            <p> Rating </p>
+            <div id="idGenre">
+                <label for="genre"> Genre: </label>
+                <select name="genre" id="genre">
+                    <option value="horror">Horror</option>
+                    <option value="animation">Animation</option>
+                    <option value="action">Action</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="romance">Romance</option>
+                </select> <br> <br>
+            </div>
 
-            <div class="starRating">
+            <p> Rating: </p>  
+
+            <div class="starRating" id = "idStar">
                 <input type="radio" name="movieStars" value="5" id="star5">
                 <label for="star5">★</label>
 
@@ -53,7 +63,6 @@
             <button type="submit" id="but">Add Movie</button>
 
         </form>
-
 
             <h2>Saved Movies</h2>
             <div id="movieList"></div>

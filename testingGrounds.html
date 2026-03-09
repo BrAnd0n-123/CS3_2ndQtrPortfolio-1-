@@ -2,69 +2,22 @@
 <html>
     <head>
         <title>inventory.html</title>
+        <style>
+            div {
+            background-color: black;
+            transition: red 0.3 ease-in-out;
+            }    
+            div:hover {
+            transform: rotate(32);
+            }
+            h2{
+            color: white;
+            }
+        </style>
     <body>
 
-        <h2> Add / Remove Item </h2>
+        <div><p> Add / Remove Item </p></div>
 
-            <input type="number" id="number" placeholder="Type a Number"> 
-
-            <input type="text" id="item" placeholder="Type an Item Name">
-
-            <button id="addItem" onclick="addItem()">Add Item</button>
-            <button id="removeItem" onclick="removeItem()">Remove Item</button>
-
-        <h1> Inventory </h1>
-        <ul id="invStuff"></ul>
-        <button id="clearInventory" onclick="clearInventory()">Clear Inventory</button>
-
-        <script>
-
-            let inventory = JSON.parse(localStorage.getItem("inventory")) || []; //Creates a new array for the list
-
-            displayItems();
-
-            function addItem(){
-                const number = parseInt(document.getElementById('number').value);
-                const itemInput = document.getElementById('item')
-                const item = itemInput.value.trim(); //create variables
-
-                if(number < 1){
-                    alert("Input a counting number");
-                    return;
-                }
-
-                let exists = inventory.find(obj => obj.item.toLowerCase() === item.toLowerCase());
-
-                if(exists){
-                    exists.quantity += number;
-                }
-                else{
-                    inventory.push({item: item, quantity: number});
-                }
-                localStorage.setItem("inventory", JSON.stringify(inventory));
-
-                displayItems();
-            }
-
-            function displayItems(){
-                let list=document.getElementById('invStuff')
-                list.innerHTML="";
-
-                inventory.forEach(obj => {
-
-                    let li=document.createElement("li");
-                    li.textContent= obj.quantity + " " + obj.item;
-
-                    list.appendChild(li);
-                });
-            }
-
-
-            function clearInventory(event){
-                if(!confirm("Are you sure you want to clear your Inventory?")){
-                    localStorage.clear();
-                };
-            }
 
         </script>
 
