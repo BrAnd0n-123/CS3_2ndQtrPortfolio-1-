@@ -1,19 +1,26 @@
 let savedMovies = JSON.parse(localStorage.getItem("savedMovies")) || {}; //Start up a new object to hold all information
 
-          function displayMovie(){ //Display the information
-            const list = document.getElementById("movieList"); 
-            list.innerHTML = ""; //Creates a list- this will store all information inside your savedMovies object and lists each one down
+          function displayMovie() {
+            const list = document.getElementById("movieList");
+            list.innerHTML = "";
 
-              for(let i in savedMovies){ //Loops inside the object to output each id
+            for (let i in savedMovies) {
                 const info = savedMovies[i];
                 const div = document.createElement("div");
-                div.className = "infoSavedMovie"; //Create an element called div to store in everything
+                div.className = "infoSavedMovie"; 
+                
+                // Use structured HTML for easier styling
                 div.innerHTML = `
-                ${info.title} - (${info.year}) - ${info.genre}, Rating: ${"⭐".repeat(info.stars)} <button onclick="deleteMovie('${i}')">Delete</button>
-                `; //Text output
-                list.appendChild(div); //Add in the div
-              }
-          }
+                    <div class="movieInfoText">
+                        <span class="savedTitle">${info.title}</span>
+                        <span class="savedYear">(${info.year})</span>
+                        <div class="savedDetails">${info.genre} | Rating: ${"★".repeat(info.stars)}</div>
+                    </div>
+                    <button class="deleteBtn" onclick="deleteMovie('${i}')">DELETE</button>
+                `;
+                list.appendChild(div);
+            }
+        }
 
           document.getElementById("formMovie").addEventListener("submit", function(event) {
 
