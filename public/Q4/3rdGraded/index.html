@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <!-- change the authors name to both your names-->
-  <meta name="author" content="Sir Roy/Al Mendoza">
+  <meta name="author" content="Brandon Timothy P. Fernando">
   <meta name="description" content="testing and debugging">
   <meta name="keywords" content="testing and debugging">
   <title>CS 3 </title>
@@ -18,13 +18,13 @@
 <body>
   <header>
     <nav>
-      <a href="#start">Table</a>
+      <a href="#table">Table</a> <!-- go to table, not start-->
       <a href="#input">Input</a>
       <a href="#output">Output</a>
       <a href="errorlogs.html">Error Logs</a>
     </nav>
     
-    <h1 style="padding: 30px">Your Name/Section  - Mar 2026 </h1>
+    <h1 style="padding: 30px">Brandon Fernando/9Mg  - Mar 2026 </h1>
     <h2 id="start"> Nlogonia </h2>
   </header>
 
@@ -69,11 +69,16 @@
       <input type="number" id="x" placeholder="x"> 
       <input type="number" id="y" placeholder="y">
     </p>
-    <button onclick="plotPoint(Number(x0.value),Number(y0.value),Number(x.value), Number(y.value))"> Plot </button>
+    <button onclick="plotPoint(
+  Number(document.getElementById('x0').value),
+  Number(document.getElementById('y0').value),
+  Number(document.getElementById('x').value),
+  Number(document.getElementById('y').value)
+)"> Plot </button>
   </section>
   
   <section id="output">
-    <h2 id="output"> Output </h2>
+    <h2> Output </h2> <!--duplicate output-->
   
     <div id="coordinatePlane">
         <div id="xAxis" class="axis"></div>
