@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Animation</title>
+		<meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta name="description" content="Sample Code to implement animation">
+    <meta name="keywords" content="animation, @keyframes">
+    <meta name="author" content="A.L. Mendoza">
+    <meta name="revised" content="01/13/2020">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			* {
+			    box-sizing: border-box;  
+			}
+
+			body {
+			    font-family: Arial, Helvetica, sans-serif;
+			}
+
+			/*-- simple text and border effects on h1 -- */
+			h1 { background: lightgray; 
+				color: white;
+				text-align: center; 
+				padding: 10px;
+				width: 50%;
+				border-radius: 25px;
+				margin: 0 auto;
+				border: 2px solid gray;
+				text-shadow: 2px 2px 5px #000000;
+				box-shadow: 10px 10px 7px grey;
+			}
+				
+			div {width: 100px;
+				height: 100px;
+				padding-top: 10px;
+				margin: 20px auto;
+				text-align:center;
+				color: white;
+			}
+				
+			.first {background-color:red;}
+			.second {background-color:blue}
+
+			/*-- animation happen on hover --*/
+
+			/*-- moving animation  --*/
+			.first {
+				position:relative;
+				-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+				animation-name: div1;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+
+			
+			/* Standard syntax */
+			@keyframes div1 {
+			  0%   {background-color:red; left:0px; top:0px;}
+			  25%  {background-color:yellow; left:200px; top:0px;}
+			  50%  {background-color:blue; left:200px; top:300px;}
+			  75%  {background-color:green; left:0px; top:300px;}
+			  100% {background-color:red; left:0px; top:0px;}
+			}
+
+			/* Safari 4.0 - 8.0 */
+			@-webkit-keyframes div1 {
+			  0%   {background-color:red; left:0px; top:0px;}
+			  25%  {background-color:yellow; left:200px; top:0px;}
+			  50%  {background-color:blue; left:200px; top:300px;}
+			  75%  {background-color:green; left:0px; top:300px;}
+			  100% {background-color:red; left:0px; top:0px;}
+			}
+
+
+			/*-- background color animation -- */
+			/* The element to apply the animation to */
+			.second {
+			  width: 100px;
+			  height: 100px;
+        /* the name div2 here will be used in the @keyframes*/
+			  animation-name: div2;				
+			  animation-duration: 5s;
+			  animation-iteration-count: infinite;
+			}
+
+			@keyframes div2 {
+			  from {background-color: yellow;}
+			  to {background-color: blue;}
+			 }
+        a {
+        text-decoration: none;
+      }
+      button {
+        display: block;
+        width: 25vw;
+        padding: 5px;
+        margin: 10px auto;
+      }
+		</style>
+		</style>
+	</head>
+	<body>
+		<h1> animation properties  </h1>
+		<div class="first"> moving <br/> box </div>
+		<div class="second"> changing <br/> color </div>
+    <a href="../index.html"><button> Click me for Home</button> </a>
+	</body>
+</html>

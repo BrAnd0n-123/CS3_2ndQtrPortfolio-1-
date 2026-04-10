@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Transition and Animation Exercises</title>
+		<meta charset="UTF-8">
+    	<meta name="description" content="Sample Code to implement transform and transition">
+    <meta name="author" content="A.L. Mendoza & M.Tarcelo">
+    <meta name="revised" content="12/04/2022">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+      * {box-sizing: border-box}
+			div{
+				transition: all 0.5s;
+			}
+			
+			#roll{
+				width: 400px;
+				height: 400px;
+				margin: 30px auto;
+			}
+			#roll img{
+				width: 100%;
+        		height: 100%;
+        		opacity: 0.75;
+			}
+      		#roll img:hover{
+				opacity: 1;
+			}
+			#roll div{
+				width: 200px;
+				height: 200px;
+			}
+			#roll div:first-of-type{
+				background-color: red;
+			}
+			#roll div:nth-of-type(2){
+				background-color: yellow;
+				}
+			#roll div:nth-of-type(3){
+				background-color: blue;
+			}
+			#roll div:last-of-type{
+ 				background-color: green;
+			}
+			p {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="roll">
+			<p><a href="../index.html"> 
+        <img src="../images/funny.jpg"/>
+      </a>
+      </p>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+    <p>Click on the Image for Home<br/>
+    Source: https://www.ba-bamail.com/cute-overload/75-of-the-cutest-kittens-in-the-world/
+    </p>
+    
+	</body>
+</html>

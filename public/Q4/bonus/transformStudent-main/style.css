@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+* {
+  box-sizing: border-box;
+}
+
+section > * {
+  text-align: center;
+  color: purple;
+}
+
+/*------------ style rule for the main menu in nav */
+nav {
+  background-color: rgb(42,157,143);
+}
+nav > ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   background-color: rgb(42,157,143);
+   width: 50px;
+}
+nav img {
+  width: 25px;
+  height: 25px;
+}
+li, li a{
+   display: block;
+   color: black;
+   padding: 5px;
+   text-decoration: none;
+}
+li a:hover {
+   color: white;
+}
+#ham ul {
+  position: absolute;
+  background-color: rgb(42,157,143);
+  left: -105px;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  transition: left 0.5s;
+}
+
+#ham:hover ul {
+  left: 0;
+}
